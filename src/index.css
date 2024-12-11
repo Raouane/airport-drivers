@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@layer base {
+  body {
+    background-color: #1A1A1A;
+    color: #FFE082;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-[#FFE082] hover:text-[#FFC107] transition-colors duration-200;
+  }
+
+  .driver-card {
+    @apply bg-[#2A2A2A] rounded-lg shadow-xl p-6 m-4 max-w-sm border border-[#FFC107]/20 transform transition-all duration-300 hover:scale-105;
+  }
+
+  .driver-name {
+    @apply text-xl font-bold mb-2 text-[#FFC107];
+  }
+
+  .driver-info {
+    @apply space-y-3 text-[#FFE082];
+  }
+
+  .info-label {
+    @apply font-semibold mr-2 text-[#FFC107];
+  }
+
+  .status-badge {
+    @apply px-3 py-1 rounded-full text-sm font-semibold;
+  }
+
+  .status-available {
+    @apply bg-green-500 text-white;
+  }
+
+  .status-busy {
+    @apply bg-red-500 text-white;
+  }
+
+  .contact-link {
+    @apply text-[#FFE082] hover:text-[#FFC107] transition-colors duration-200;
+  }
+
+  /* Styles pour les inputs de type date et time */
+  input[type="date"]::-webkit-calendar-picker-indicator,
+  input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(80%) sepia(50%) saturate(1000%) hue-rotate(360deg) brightness(105%) contrast(105%) !important;
+    opacity: 1 !important;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    background-color: transparent;
+  }
+
+  /* Style pour Firefox */
+  input[type="date"],
+  input[type="time"] {
+    color-scheme: dark;
+  }
+
+  /* Style pour les inputs en mode sombre */
+  input[type="date"],
+  input[type="time"] {
+    background-color: #1A1A1A !important;
+    color: #FFE082 !important;
+    border: 1px solid rgba(255, 193, 7, 0.2) !important;
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+  }
+
+  input[type="date"]:focus,
+  input[type="time"]:focus {
+    border-color: #FFC107 !important;
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(255, 193, 7, 0.2);
+  }
+}
